@@ -1,0 +1,28 @@
+'****************************************************************************************************
+'* Function: FindRegExp
+'* Author: Caseware website
+'* Date:  06/02/2017
+'* Purpose: Checks a field or string for a match to a RegEx range or value. 
+'*   It returns the first match to the range or value. 
+'*   This custom function uses VBScript syntax and is not case sensitive. 
+'*   Only one RegEx range or value can be checked at a time.
+'* Update: 
+'****************************************************************************************************
+
+Function FindRegExp(input_string As String,reg_exp As String) As String 
+Dim RE As Object, REMatches As Object, RE6 As String     
+
+Set RE = CreateObject("vbscript.regexp")     
+  RE.MultiLine = False     
+  RE.Global = False     
+  RE.IgnoreCase = True     
+  RE.Pattern = reg_exp        
+Set REMatches = RE.Execute(input_string)       
+
+If REMatches.count = 0 Then Exit Function       
+
+'  Print rematches(0)     
+  RE6 = CStr(REMatches(0))     
+  findregexp = RE6
+
+End Function
