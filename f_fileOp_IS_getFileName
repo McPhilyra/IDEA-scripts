@@ -1,0 +1,17 @@
+'*****************************************************************************************************************************************
+'* Function:  getFileName
+'* Author: Edward Stansfeld estansfeld@audit-scotland.gov.uk
+'* Date:  06/02/2017
+'* Purpose:  get the file name on an IDEAServer file, leaving the path behind
+'* Input:  nothing
+'* Returns:  Error message if the field does not exist in both databases or is of a different type
+'*****************************************************************************************************************************************
+
+Function getFileName(temp_filename As String)  As String
+Dim fName As String  
+
+'call the FindRegExp to get the path to the file on IDEAServer (client.workingdirectory does not work in Server mode) 
+
+  fName = FindRegExp(temp_filename, "[^\\]+(?=\.IMD$)" )  getFileName = fname ' tempfilename
+
+End Function
