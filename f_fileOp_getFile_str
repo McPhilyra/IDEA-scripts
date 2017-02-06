@@ -1,0 +1,19 @@
+'*****************************************************************************************************************************************
+' Original Author :   Brian Element - brian.element@ideascripting.com
+'* Function:  getFile
+'* Purpose:  Routine to display the fileexplorer and return the file selected
+'* Input:  nothing
+'* Returns:  Filename of the file selected
+'*****************************************************************************************************************************************
+
+Function getFile() As String               
+Dim filebar As Object               
+Set filebar = CreateObject ("ideaex.FileExplorer")               
+
+' Display the File Explorer               
+filebar.DisplayDialog               
+
+' Set Variable to store Select File Name               
+getFile = filebar.SelectedFile
+
+End Function
